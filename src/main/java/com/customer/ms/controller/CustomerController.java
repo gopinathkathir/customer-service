@@ -39,4 +39,14 @@ public class CustomerController {
 	public Customer addCustomer(@RequestBody Customer customer){
 		return custmerDAO.addCustomer(customer);
 	}
+	
+	@RequestMapping(value="/customer/{cusId}",method=RequestMethod.DELETE, produces= {MediaType.APPLICATION_JSON_VALUE})
+	public void deleteCustomer(@PathVariable("cusId") String cusId){
+		custmerDAO.deleteCustomer(cusId);
+	}
+	
+	@RequestMapping(value="/customer",method=RequestMethod.PUT, produces= {MediaType.APPLICATION_JSON_VALUE})
+	public Customer updateCustomer(@RequestBody Customer customer){
+		return custmerDAO.updateCustomer(customer);
+	}
 }

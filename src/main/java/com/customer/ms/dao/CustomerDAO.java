@@ -40,4 +40,13 @@ public class CustomerDAO {
 			cusMap.put(cus.getCusId(),cus);
 			return cus;
 		}
+		
+		public Customer updateCustomer(Customer cus) {
+			cusMap.replace(cus.getCusId(),cus);
+			return cus;
+		}
+		
+		public void deleteCustomer(String cusId) {
+			cusMap.remove(cusId);
+		}
 }
